@@ -3,6 +3,7 @@
 use App\Http\Controllers\forgotPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Middleware\SessionTimeout;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,13 +20,25 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::group(['middleware' => ['auth','session_timeout']], function () {
+    // Route::get('/dashboard', function () {
+    //     // Only authenticated users can access this route
+    //     // Session timeout logic will be applied
+    // });
+    Route::get('/', [HomeController::class, 'home']);
+    Route::get('/about', [HomeController::class, 'about']);
+    Route::get('/portfolio', [HomeController::class, 'portfolio']);
+    Route::get('/contact', [HomeController::class, 'contact']);
 
-Route::get('/',[HomeController::class,'home']);
-Route::get('/about',[HomeController::class,'about']);
-Route::get('/portfolio',[HomeController::class,'portfolio']);
-Route::get('/contact',[HomeController::class,'contact']);
-Route::get('/login',[LoginController::class,'Login']);
-Route::post('/login',[LoginController::class,'loginUser'])->name('llogin');
+    // Route::get('/profile', function () {
+    //     // This route also has the session timeout middleware
+    // });
+
+    // ...other routes that need session timeout protection
+});
+
+Route::get('/login', [LoginController::class, 'Login'])->name('login');;
+Route::post('/login', [LoginController::class, 'loginUser'])->name('llogin');
 Route::get('/register', [LoginController::class, 'showRegister'])->name('register');
 Route::post('/register', [LoginController::class, 'register']);
 // Show the forgot password form

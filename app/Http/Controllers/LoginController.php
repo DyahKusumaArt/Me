@@ -28,11 +28,12 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            //gagal
+            //berhasil
+            session(['start_time' => time()]);
             return redirect()->intended('/');
         } else {
-            //berhasil
-            return redirect('login')->withErrors('username and password not compatible');
+            //gagal
+            return redirect('/login')->withErrors('username and password not compatible');
         }
     }
     public function register(Request $request)
@@ -46,7 +47,7 @@ class LoginController extends Controller
             User::create([
                 'email' => $request->input('email'),
                 'name' => $request->input('name'),
-                
+
                 'password' => Hash::make($request->input('password')),
             ]);
             return redirect('/login')->with('success', 'Operation successful!');

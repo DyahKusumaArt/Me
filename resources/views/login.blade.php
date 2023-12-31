@@ -17,11 +17,11 @@
         </div>
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm ">
-            <form class="space-y-6"  action="{{ url('login') }}" method="POST">
+            <form class="space-y-6" action="{{ url('login') }}" method="POST">
                 @csrf
                 @if (session('errors'))
-    <p class="text-white">{!! implode('<br>', session('errors')->all()) !!}</p>
-@endif
+                    <p class="text-white">{!! implode('<br>', session('errors')->all()) !!}</p>
+                @endif
                 <div>
                     <label for="email" class="block text-sm font-medium leading-6 ">Email address</label>
                     <div class="mt-2">
@@ -34,7 +34,8 @@
                     <div class="flex items-center justify-between">
                         <label for="password" class="block text-sm font-medium leading-6">Password</label>
                         <div class="text-sm">
-                            <a href="forgot-password" class="font-semibold text-indigo-600 hover:text-indigo-500 ">Forgot
+                            <a href="forgot-password"
+                                class="font-semibold text-indigo-600 hover:text-indigo-500 ">Forgot
                                 password?</a>
                         </div>
                     </div>
