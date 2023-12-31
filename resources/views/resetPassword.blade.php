@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite('resources/css/app.css')
+</head>
+
+<body class="h-full bg-black ">
+
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 text-white">
+        <div class="header text-justify text-3xl font-bold pb-5">Buana Jaya</div>
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+            {{-- <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"> --}}
+            <h2 class="mt-10 text-left text-2xl font-bold leading-9 tracking-tight">Sign in to your account</h2>
+        </div>
+
+        <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm ">
+            <form class="space-y-6" action="{{ url('resettPassword') }}" method="POST">
+                @csrf
+                @if (session('errors'))
+                    <p class="text-white">{!! implode('<br>', session('errors')->all()) !!}</p>
+                @endif
+                <div>
+                    <label for="email" class="block text-sm font-medium leading-6 ">Email address</label>
+                    <div class="mt-2">
+                        <input id="email" name="email" value="{{ old('email') }}" autocomplete="email"
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-gray-700">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between">
+                        <label for="password" class="block text-sm font-medium leading-6">Password</label>
+                    </div>
+                    <div class="mt-2">
+                        <input id="password" name="password" type="password" autocomplete="current-password"
+                            class="bg-gray-700 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center justify-between">
+                        <label for="confirm-password" class="block text-sm font-medium leading-6">Confirm Password</label>
+                    </div>
+                    <div class="mt-2">
+                        <input id="password" name="password_confirmation" type="password" autocomplete="current-password"
+                            class="bg-gray-700 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <input type="hidden" name="token" value="{{ $token }}">
+
+                <div>
+                    <button type="submit" name="submit" value="submit"
+                        class="flex w-full justify-center rounded-md  bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign
+                        in</button>
+                </div>
+            </form>
+
+            <p class="mt-10 text-center text-sm text-gray-500">
+                Not a member? 
+                <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Start Sign
+                    Up</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
