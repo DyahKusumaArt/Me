@@ -10,10 +10,10 @@
 <body class="h-full bg-black ">
 
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 text-white">
-        <div class="header text-justify text-3xl font-bold pb-5">Buana Jaya</div>
+        <div class="header text-justify text-3xl font-bold pb-5">Dyah Kusuma</div>
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
             {{-- <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"> --}}
-            <h2 class="mt-10 text-left text-2xl font-bold leading-9 tracking-tight">Sign in to your account</h2>
+            <h2 class="mt-10 text-left text-2xl font-bold leading-9 tracking-tight">Sign in to make account</h2>
         </div>
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm ">
@@ -56,9 +56,8 @@
             </form>
 
             <p class="mt-10 text-center text-sm text-gray-500">
-                Not a member? new to Buana jaya?
-                <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Start Sign
-                    Up</a>
+                you have account?
+                <a href="/login" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Login</a>
             </p>
         </div>
     </div>

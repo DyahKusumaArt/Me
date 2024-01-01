@@ -4,6 +4,7 @@ use App\Http\Controllers\forgotPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Middleware\SessionTimeout;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,12 +31,12 @@ Route::group(['middleware' => ['auth','session_timeout']], function () {
     Route::get('/portfolio', [HomeController::class, 'portfolio']);
     Route::get('/contact', [HomeController::class, 'contact']);
 
-    // Route::get('/profile', function () {
-    //     // This route also has the session timeout middleware
-    // });
-
-    // ...other routes that need session timeout protection
+    
 });
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/login'); // Redirect to login page
+})->name('logout');
 
 Route::get('/login', [LoginController::class, 'Login'])->name('login');;
 Route::post('/login', [LoginController::class, 'loginUser'])->name('llogin');

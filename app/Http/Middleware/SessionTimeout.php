@@ -2,10 +2,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Auth;
 
-class SessionTimeout extends Middleware
+class SessionTimeout
 {
     public function handle($request, Closure $next)
     {
@@ -18,7 +17,7 @@ class SessionTimeout extends Middleware
         $start_time = session('start_time');
 
         // Check for timeout (30 minutes in this example)
-        if ($start_time < time() - (1 * 30)) {
+        if ($start_time < time() - (60 * 30)) {
             Auth::logout();
             return redirect('/login');
         }

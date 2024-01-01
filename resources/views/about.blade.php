@@ -1,23 +1,23 @@
 @extends('HeadFoot')
 @section('content')
-    <div class=" sm:pb-40 sm:pt-24 lg:pb-24 lg:pt-10">
-        <h1 class="text-3xl pb-16 font-bold tracking-tight text-center text-gray-900 sm:text-6xl">
+    <div class=" sm:pb-40 pt-10 lg:pb-24 lg:pt-10">
+        <h1 class="text-3xl max-sm:pb-0 pb-16 font-bold tracking-tight text-center text-gray-900 sm:text-6xl">
             About Me
         </h1>
         <div class="relative xl:mx-36 sm:static sm:px-6 lg:px-2 lg:flex">
             <div class=" lg:w-1/3 max-lg:justify-center max-lg:flex max-lg:px-10">
-                <div class="sm:max-w-lg max-md:text-center lg:text-right max-lg:text-justify h-full ">
+                <div class="sm:max-w-lg max-md:text-center lg:text-right max-lg:text-center h-full ">
 
-                    <h3 class="mt-4 text-xl text-gray-500 ">
+                    <h3 class="mt-4 text-xl text-gray-500 max-sm:text-[14px]">
                         I'm a <span class="font-bold text-pink-900"> Full Stack Developer </span> specializing in backend
                         development from
                         <span class="text-black font-bold">Bali, Indonesia</span>
                     </h3>
-                    <p class="mt-4 text-xl text-gray-500 ">
+                    <p class="mt-4 text-xl text-gray-500 max-sm:text-[14px] ">
                         I enjoy talking complex problem and i also love the logic structure of coding and
                         always strive to write efficient code and make it work.
                     </p>
-                    <p class="mt-4 text-xl text-gray-500 ">
+                    <p class="mt-4 text-xl text-gray-500 max-sm:text-[14px]">
                         when i'm not coding, you will find me in the game or playing chess.
                     </p>
 
@@ -195,7 +195,7 @@
                 positionAll();
                 (function() {
                     update();
-                    setTimeout(arguments.callee, 40);
+                    setTimeout(arguments.callee, 30);
                 })();
             };
 
