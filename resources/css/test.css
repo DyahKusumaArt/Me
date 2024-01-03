@@ -25,18 +25,21 @@
 	border-radius:3px;
 }
 #tek a.tagc1{
-	background:#221c3b;
+	
 	color:#fff;
 }
 #tek a.tagc2{
-	background:#491429;
 	color:#fff;
 }
 #tek a.tagc3{
-	background:#1a3f2c;
 	color:#fff;
 }
 #tek a:hover{
-	color:#000000;
-	background:#7c7c7c;
+	color:#700000 !important;
+	
+}
+
+.black {
+	background-color: #000000 !important;
+	color: white !important;
 }

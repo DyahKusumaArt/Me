@@ -1,7 +1,7 @@
 @extends('HeadFoot')
 @section('content')
-    <div class=" sm:pb-40 pt-10 lg:pb-24 lg:pt-10">
-        <h1 class="text-3xl max-sm:pb-0 pb-16 font-bold tracking-tight text-center text-gray-900 sm:text-6xl">
+    <div class=" sm:pb-40 pt-10 lg:pb-24 lg:pt-10 black">
+        <h1 class="text-3xl max-sm:pb-0 pb-16 font-bold tracking-tight text-center text-gray-300 sm:text-6xl">
             About Me
         </h1>
         <div class="relative xl:mx-36 sm:static sm:px-6 lg:px-2 lg:flex">
@@ -11,14 +11,14 @@
                     <h3 class="mt-4 text-xl text-gray-500 max-sm:text-[14px]">
                         I'm a <span class="font-bold text-pink-900"> Full Stack Developer </span> specializing in backend
                         development from
-                        <span class="text-black font-bold">Bali, Indonesia</span>
+                        <span class="text-gray-400 font-bold">Bali,</span>
                     </h3>
                     <p class="mt-4 text-xl text-gray-500 max-sm:text-[14px] ">
                         I enjoy talking complex problem and i also love the logic structure of coding and
                         always strive to write efficient code and make it work.
                     </p>
                     <p class="mt-4 text-xl text-gray-500 max-sm:text-[14px]">
-                        when i'm not coding, you will find me in the game or playing chess.
+                        when i'm not coding, you will find me in steam or playing chess.
                     </p>
 
                 </div>
@@ -81,9 +81,9 @@
             </div>
         </div>
     </div>
-    <div class="mb-5 justify-center flex">
+    <div class="pb-5 justify-center flex black">
         <a href="/contact"
-            class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">
+            class="inline-block rounded-md border border-transparent bg-gray-700 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">
             Work With Me
         </a>
     </div>
